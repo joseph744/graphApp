@@ -20,10 +20,8 @@ public class SqlDataSourceServlet extends DataSourceServlet {
 	}
 
 	public DataTable generateDataTable(Query query, HttpServletRequest request) throws DataSourceException {
-		/*SqlDatabaseDescription dbDescription = new SqlDatabaseDescription(request.getParameter("url"),
-				request.getParameter("user"), request.getParameter("password"), request.getParameter("table"));*/
-		System.out.println("I am in");		
-		SqlDatabaseDescription dbDescription = new SqlDatabaseDescription("jdbc:mysql://localhost/googlegraph", "root", "password", "emp");
+		SqlDatabaseDescription dbDescription = new SqlDatabaseDescription(request.getParameter("url"),
+				request.getParameter("user"), request.getParameter("password"), request.getParameter("table"));
 		return SqlDataSourceHelper.executeQuery(query, dbDescription);
 	}
 

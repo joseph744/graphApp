@@ -17,6 +17,7 @@
 
     // Specify the data source URL.
     var query = new google.visualization.Query('simpleexample');
+    query.setQuery('select name, population');
 
     // Send the query with a callback function.
     query.send(handleQueryResponse);
