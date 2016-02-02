@@ -17,7 +17,7 @@
 
     // Specify the data source URL.
     var query = new google.visualization.Query('sql?url=jdbc:mysql://localhost/googlegraph&user=root&password=password&table=emp');
-    query.setQuery('select name, population');
+    query.setQuery('select name where salary > 700');
 
     // Send the query with a callback function.
     query.send(handleQueryResponse);
